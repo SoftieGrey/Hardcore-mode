@@ -5,7 +5,7 @@ local test=false
 if game.ReplicatedStorage:FindFirstChild("Test") then
 test = true
 end
-local seed = ""
+local seed = 0
 local jobid = game.JobId  -- Get the JobId
 
 -- Loop through each character in the JobId string
@@ -14,12 +14,11 @@ for i = 1, string.len(jobid) do
     local number = tonumber(char)  -- Convert the character to a number
 
     if number then
-        seed = seed .. number  -- If it's a number, append it to the seed string
+        seed = seed + number  -- If it's a number, append it to the seed string
     end
 end
 
--- Convert the seed string to a number
-seed = tonumber(seed)
+-- Convert the seed string to a number (unneeded)
 
 -- Check the seed value
 print("Final Seed:", seed)
