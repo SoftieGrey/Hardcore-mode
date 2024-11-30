@@ -5,7 +5,25 @@ local test=false
 if game.ReplicatedStorage:FindFirstChild("Test") then
 test = true
 end
-local seed=2323323243433434
+local seed = ""
+local jobid = game.JobId  -- Get the JobId
+
+-- Loop through each character in the JobId string
+for i = 1, string.len(jobid) do
+    local char = string.sub(jobid, i, i)  -- Get each character
+    local number = tonumber(char)  -- Convert the character to a number
+
+    if number then
+        seed = seed .. number  -- If it's a number, append it to the seed string
+    end
+end
+
+-- Convert the seed string to a number
+seed = tonumber(seed)
+
+-- Check the seed value
+print("Final Seed:", seed)
+
 --[[
 
     NOTE: Custom shop items will NOT cost any real knobs
