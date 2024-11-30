@@ -160,7 +160,7 @@ function makeEntity(ent)
 end
 local crucifixchance=10
 local lanternchance=50
-local TIMEChance={number=75, inAChance=100, roomMin=5}
+local TIMEChance={number=45, inAChance=100, roomMin=5}
 local SPEEDChance={number=25, inAChance=100, roomMin=25}
 
 if test==true then
