@@ -129,6 +129,12 @@ local entity = spawner.Create({
 		Cause = ""
 	}
 })
+entity:SetCallback("OnDamagePlayer", function(newHealth)
+	if newHealth == 0 then
+		Jumpscare()
+	else
+	end
+end)
 entity:SetCallback("OnDespawning", function()
     ach(achName, achDesc, achR, achImg)
 end)
