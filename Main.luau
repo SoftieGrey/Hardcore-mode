@@ -53,8 +53,8 @@ local Lantern = LoadCustomInstance("https://raw.githubusercontent.com/softbf395/
     Stack = 1,
 })--]]
 local StarterGui=game:GetService("StarterGui")
-if not game:FindFirstChild("TrialsModeRan", true) then
-Instance.new("BoolValue", game.ReplicatedStorage).Name="TrialsModeRan"
+if not game:FindFirstChild("HCRan", true) then
+Instance.new("BoolValue", game.ReplicatedStorage).Name="HCRan"
  function displayMessages()
     -- Green Text Message
     StarterGui:SetCore("ChatMakeSystemMessage", {
