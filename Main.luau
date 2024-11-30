@@ -142,8 +142,8 @@ function makeEntity(ent)
 end
 local crucifixchance=10
 local lanternchance=50
-local TIMEChance={number=20, inAChance=100, roomMin=5}
-local SPEEDChance={number=15, inAChance=100, roomMin=25}
+local TIMEChance={number=75, inAChance=100, roomMin=5}
+local SPEEDChance={number=25, inAChance=100, roomMin=25}
 
 if test==true then
 SPEEDChance={number=100, inAChance=100, roomMin=0}
@@ -159,7 +159,7 @@ doorNumV.Changed:Connect(function()
 		if Random.new(seed):NextNumber(1,100) <=TIMEChance.number and doorNumV.Value>=TIMEChance.roomMin then
                         local time=setup("Quick", "https://raw.githubusercontent.com/SoftieGrey/Hardcore-mode/refs/heads/main/DoorsHC/quick.rbxm",  true, 1.5, 0, false, 1, 2, 0, true, 100, 40, true, false, true, "Guiding", {"You Died To Who You Call Quick.", "Listen for any cues that might hint at it's arrival.", "Find a hiding spot quickly!", "It's speed has been proven to be quite menacing."}, function() end, "Watch yo jet", "WATCH YP JET!!", "Survive Quick", getimglink("ayowatchyojet.png"))
 			time:Run()
-                elseif Random.new(seed):NextNumber(1,100) <=SPEEDChance.number and doorNumV.Value>=TIMEChance.roomMin then
+                elseif Random.new(seed):NextNumber(1,100) <=SPEEDChance.number and doorNumV.Value>=SPEEDChance.roomMin then
                         local time=setup("Tackle", "https://raw.githubusercontent.com/SoftieGrey/Hardcore-mode/refs/heads/main/DoorsHC/Tackle.rbxm",  true, 7.5, 2, false, 5, 10, 1, true, 300, 40, false, false, true, "Guiding", {"You died to Tackle.", "Its a tricky one.", "use what you learned from quick.", "and ambush-"}, function() end, "Charging at Front", "Look Out!", "Successfully Survive Tackle", getimglink("chargingatfront.png"))
 			time:Run()
 		end
