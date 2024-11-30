@@ -65,19 +65,9 @@ local StarterGui=game:GetService("StarterGui")
 if not game:FindFirstChild("HCRan", true) then
 Instance.new("BoolValue", game.ReplicatedStorage).Name="HCRan"
  function displayMessages()
-    -- Green Text Message
-    StarterGui:SetCore("ChatMakeSystemMessage", {
-        Text = "<font color='#00FF00'>Loaded Aedaniss7’s The Trials Mode for doors!<br/>If you encounter any bugs, report it to Aedaniss7’s hub on scriptblox!<br/>Version: 0.0.2</font>";
-        Font = Enum.Font.SourceSansBold;
-        TextSize = 18;
-    })
-
-    -- Red Text Message
-    StarterGui:SetCore("ChatMakeSystemMessage", {
-        Text = "<font color='#FF0000'>Good luck! You’ll need it.. ;)</font>";
-        Font = Enum.Font.SourceSansBold;
-        TextSize = 18;
-    })
+    game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "[Aedaniss7 and Greysoniss5's crafter HardCore mode]: Script succesfully executed.", Color = Color3.fromRGB( 0,255,0 ), Font = nothingactually, FontSize = Enum.FontSize.Size24 } )
+game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "SCRIPT VERSION: MULTIPLAYER (v1.25)", Color = Color3.fromRGB( 0,255,0 ), Font = nothingactually, FontSize = Enum.FontSize.Size24 } )
+game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "Good Luck. You'll need it..", Color = Color3.fromRGB( 255,255,255 ), Font = nothingactually, FontSize = Enum.FontSize.Size24 } )
 end
 displayMessages()
 ach("HardCore mode enabled!", "Good luck, You'll need it ;)", "Activate The Trials Mode.", "https://static.wikia.nocookie.net/doors-game/images/9/90/Welcome_Badge.png/revision/latest?cb=20220810040126")
