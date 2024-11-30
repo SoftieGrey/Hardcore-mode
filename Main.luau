@@ -44,13 +44,13 @@ local Lantern = LoadCustomInstance("https://raw.githubusercontent.com/softbf395/
 
 
 -- Create custom shop item
-CustomShop.CreateItem(Lantern, {
+--[[CustomShop.CreateItem(Lantern, {
     Title = "Lantern",
     Desc = "Light up those annoying dark rooms!",
     Image = "rbxassetid://18249762827",
     Price = 0,
     Stack = 1,
-})
+})--]]
 local StarterGui=game:GetService("StarterGui")
 if not game:FindFirstChild("TrialsModeRan", true) then
 Instance.new("BoolValue", game.ReplicatedStorage).Name="TrialsModeRan"
