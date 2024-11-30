@@ -5,7 +5,7 @@ local test=false
 if game.ReplicatedStorage:FindFirstChild("Test") then
 test = true
 end
-local seed=game.ReplicatedStorage.GameData.RandomSeed.Value
+local seed=2323323243433434
 --[[
 
     NOTE: Custom shop items will NOT cost any real knobs
