@@ -5,6 +5,7 @@ local test=false
 if game.ReplicatedStorage:FindFirstChild("Test") then
 test = true
 end
+local seed=game.ReplicatedStorage.GameData.RandomSeed.Value
 --[[
 
     NOTE: Custom shop items will NOT cost any real knobs
@@ -142,24 +143,24 @@ end
 local crucifixchance=10
 local lanternchance=50
 local TIMEChance={number=20, inAChance=100, roomMin=5}
-local SPEEDChance={number=15, inAChance=100, roomMin=6}
+local SPEEDChance={number=15, inAChance=100, roomMin=25}
 
 if test==true then
 SPEEDChance={number=100, inAChance=100, roomMin=0}
 end
 function getimglink(imgname)
-    return "https://raw.githubusercontent.com/softbf395/DoorsTheTialsModeAssets/refs/heads/main/images/"..imgname
+    return "https://raw.githubusercontent.com/Softiegrey/Hardcore-mode/refs/heads/main/"..imgname
 end
 local doorNumV:IntValue=game.ReplicatedStorage.GameData.LatestRoom
 doorNumV.Changed:Connect(function()
 	if math.random(1,40) <=20 then
 				local isCrucifix=false
 				
-		if math.random(1, TIMEChance.inAChance) <=TIMEChance.number and doorNumV.Value>=TIMEChance.roomMin then
-                        local time=setup("Time", "https://raw.githubusercontent.com/softbf395/DoorsTheTialsModeAssets/refs/heads/main/entitymodels/TIME.rbxm",  true, 1.1, 0, false, 3, 6, 2, true, 100, 40, true, false, true, "Guiding", {"You Died To Time.", "He Rebounds, so try hiding and stopping!", "its very confusing. i know.", "Use what you learned from ambush!"}, function() end, "TIME IS CONTINUED.", "We're not TOO LATE!", "Survive Time", getimglink("TimeSurvive.png"))
+		if Random.new(seed):NextNumber(1,100) <=TIMEChance.number and doorNumV.Value>=TIMEChance.roomMin then
+                        local time=setup("Quick", "https://raw.githubusercontent.com/SoftieGrey/Hardcore-mode/refs/heads/main/DoorsHC/quick.rbxm",  true, 1.5, 0, false, 1, 2, 0, true, 100, 40, true, false, true, "Guiding", {"You Died To Who You Call Quick.", "Listen for any cues that might hint at it's arrival.", "Find a hiding spot quickly!", "It's speed has been proven to be quite menacing."}, function() end, "Watch yo jet", "WATCH YP JET!!", "Survive Quick", getimglink("ayowatchyojet.png"))
 			time:Run()
-                elseif math.random(1, TIMEChance.inAChance) <=TIMEChance.number and doorNumV.Value>=TIMEChance.roomMin then
-                        local time=setup("Speed", "https://raw.githubusercontent.com/softbf395/DoorsTheTialsModeAssets/refs/heads/main/entitymodels/speed.rbxm",  true, 2, 2, false, 8, 8, 4, true, 300, 40, false, false, true, "Curious", {"Hmm, who did you die to this time?", "oh, the reddish-orange one.", "I call it speed.", "Its actual name is C-9.", "How it ended up here. its unknown, the most reasonable explanation is that it somehow exited The Dimension that is Lost In Time..", "hurry up, we're not done yet!"}, function() end, "SLOW.", "We're TOO FAST!", "Survive Speed", getimglink("TimeSurvive.png"))
+                elseif Random.new(seed):NextNumber(1,100) <=SPEEDChance.number and doorNumV.Value>=TIMEChance.roomMin then
+                        local time=setup("Tackle", "https://raw.githubusercontent.com/SoftieGrey/Hardcore-mode/refs/heads/main/DoorsHC/Tackle.rbxm",  true, 7.5, 2, false, 5, 10, 1, true, 300, 40, false, false, true, "Guiding", {"You died to Tackle.", "Its a tricky one.", "use what you learned from quick.", "and ambush-"}, function() end, "Charging at Front", "Look Out!", "Successfully Survive Tackle", getimglink("chargingatfront.png"))
 			time:Run()
 		end
 	end
@@ -181,5 +182,5 @@ function displayMessages()
     })
 end
 displayMessages()
-ach("Trials mode failed!!", "Its active already!", "Activate The Trials Mode again.", "https://static.wikia.nocookie.net/doors-game/images/5/51/QA_Tester_Badge.png/revision/latest?cb=20230211003716")
+ach("HARDCORE mode failed!!", "Its active already!", "Activate The Trials Mode again.", "https://static.wikia.nocookie.net/doors-game/images/5/51/QA_Tester_Badge.png/revision/latest?cb=20230211003716")
 end
